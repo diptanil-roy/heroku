@@ -24,3 +24,4 @@ subjectivity
 framenet_v15
 qc
 punkt
+averaged_perceptron_tagger
