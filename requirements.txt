@@ -1,8 +1,5 @@
 alabaster==0.7.12
 altair==4.1.0
-anaconda-client==1.7.2
-anaconda-navigator==1.9.12
-anaconda-project==0.8.3
 applaunchservices==0.2.1
 appnope==0.1.0
 appscript==1.0.1
@@ -39,10 +36,6 @@ Click==7.0
 cloudpickle==1.3.0
 clyent==1.2.2
 colorama==0.4.3
-conda==4.8.2
-conda-build==3.18.11
-conda-package-handling==1.6.0
-conda-verify==3.4.2
 contextlib2==0.6.0.post1
 cryptography==2.8
 cycler==0.10.0
@@ -127,7 +120,6 @@ networkx==2.4
 ngram-graphs==0.1.13
 nltk==3.4.5
 nose==1.3.7
-notebook==6.0.3
 numba==0.48.0
 numexpr==2.7.1
 numpy==1.18.1
