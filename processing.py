@@ -16,17 +16,32 @@ from sklearn.preprocessing import StandardScaler, FunctionTransformer, LabelEnco
 def guess_author(snip: str):
 
 	model = pickle.load(open('model_fit','rb'))
-	author_list = ['austen', 'carroll', 'defoe', 'dickens', 'doyle', 'london', 'rowling', 'shelley',
- 'stevenson', 'twain', 'wells', 'wilde']
+	author_list = ['Jane Austen', 'Lewis Carroll', 'Daniel Defoe', 'Charles Dickens', 'Sir Arthur Conan Doyle', 'Jack London', 'Joanne Rowling', 'Mary Shelley',
+ 'Louis Stevenson', 'Mark Twain', 'H.G. Wells', 'Oscar Wilde']
 	y = int(model.predict(snip))
 
 	return author_list[y]
 
-stream.title("Enter your text snippet. Make sure it's long enough.")
+stream.title("Author Identification")
+stream.header("By team data-dart")
 
-snippet = stream.text_input('Enter text')
+'''
+This is the winning submission to the [THE ERDŐS INSTITUTE May 2020 Data Science Boot Camp](https://www.erdosinstitute.org/code).
+
+For more info on this project, please visit our [github page](https://github.com/data-dart/bookend) or watch this [youtube video](https://youtu.be/P1Sq7T9PvP0).
+'''
+
+stream.write("Currently, we can only recognise the following authors: Jane Austen, Lewis Carroll, Daniel Defoe, Charles Dickens, Sir Arthur Conan Doyle, Jack London, Joanne Rowling, Mary Shelley, Louis Stevenson, Mark Twain, H.G. Wells, and Oscar Wilde. ")
+
+
+
+snippet = stream.text_area('Enter text.', height=400)
 
 submit = stream.button("Guess Author.")
 
 if submit:
-	stream.write(guess_author(snippet))
+	if (snippet!= ""):
+		stream.write(guess_author(snippet))
+
+	else:
+		stream.write("__*You must enter some text.*__")
