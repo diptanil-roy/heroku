@@ -34,7 +34,7 @@ For more info on this project, please visit our [github page](https://github.com
 
 stream.write("__Currently, we can only recognise the following authors:__ Jane Austen, Daniel Defoe, Charles Dickens, Sir Arthur Conan Doyle, Jack London, Joanne Rowling, Mary Shelley, Louis Stevenson, Mark Twain, H.G. Wells, and Oscar Wilde. ")
 
-stream.write("To identify the author with a high probability, please enter at least one chapter from the work.")
+stream.write("*To identify the author with a high probability, please enter at least one chapter from the text.*")
 
 
 
