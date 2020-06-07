@@ -29,8 +29,9 @@ from sklearn.preprocessing import StandardScaler, FunctionTransformer, LabelEnco
 
 def guess_author(snip: str):
 
-	book = BookText(rawtext=snip)
-	number_of_sentences = len(book.tokenize('sent', rem_stopwords = False))
+	if (snip!= ""): 
+		book = BookText(rawtext=snip)
+		number_of_sentences = len(book.tokenize('sent', rem_stopwords = False))
 	model = pickle.load(open('model_fit','rb'))
 	author_list = np.array(['Jane Austen', 'Lewis Carroll', 'Daniel Defoe', 'Charles Dickens', 'Sir Arthur Conan Doyle', 'Jack London', 'Joanne Rowling', 'Mary Shelley',
  'Louis Stevenson', 'Mark Twain', 'H.G. Wells', 'Oscar Wilde'])
