@@ -50,7 +50,7 @@ This is the winning submission to the [THE ERDŐS INSTITUTE May 2020 Data Scienc
 For more info on this project, please visit our [github page](https://github.com/data-dart/bookend) or watch this [youtube video](https://youtu.be/P1Sq7T9PvP0).
 '''
 
-stream.write("__Currently, we can only recognise the following authors:__ Jane Austen, Daniel Defoe, Charles Dickens, Sir Arthur Conan Doyle, Jack London, Joanne Rowling, Mary Shelley, Louis Stevenson, Mark Twain, H.G. Wells, and Oscar Wilde. ")
+stream.write("__Currently, we can only recognise the following authors:__ Jane Austen, Daniel Defoe, Charles Dickens, Sir Arthur Conan Doyle, Jack London, J.K. Rowling, Mary Shelley, Louis Stevenson, Mark Twain, H.G. Wells, and Oscar Wilde. ")
 
 stream.write("*To identify the author with a high probability, please enter at least one chapter from the text.*")
 
