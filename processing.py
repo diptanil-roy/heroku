@@ -36,7 +36,7 @@ def guess_author(snip: str):
 	author_list = np.array(['Jane Austen', 'Lewis Carroll', 'Daniel Defoe', 'Charles Dickens', 'Sir Arthur Conan Doyle', 'Jack London', 'Joanne Rowling', 'Mary Shelley',
  'Louis Stevenson', 'Mark Twain', 'H.G. Wells', 'Oscar Wilde'])
 	proba = np.reshape(model.predict_proba(snip), (len(author_list)))
-	three_highest_proba_ind = np.argpartition(proba, -3)[-3:]
+	three_highest_proba_ind = (-proba).argsort()[:3]
 	pred_top_three = author_list[three_highest_proba_ind]
 	conf_top_three = proba[three_highest_proba_ind]
 	return pred_top_three, conf_top_three, number_of_sentences
@@ -66,9 +66,9 @@ if submit:
 		if (num_sent < 25):
 			stream.write("*There are too few sentences. The predictions might be grossly incorrect. Please add a few more sentences.*")
 
-		stream.write(prob_author[2], "*with probability* ", round(confidence[2]*100,1), "%")
-		stream.write(prob_author[1], "*with probability* ", round(confidence[1]*100,1), "%")
 		stream.write(prob_author[0], "*with probability* ", round(confidence[0]*100,1), "%")
+		stream.write(prob_author[1], "*with probability* ", round(confidence[1]*100,1), "%")
+		stream.write(prob_author[2], "*with probability* ", round(confidence[2]*100,1), "%")
 
 	else:
 		stream.write("__*You must enter some text.*__")
