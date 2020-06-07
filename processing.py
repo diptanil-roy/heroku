@@ -33,7 +33,7 @@ def guess_author(snip: str):
 		book = BookText(rawtext=snip)
 		number_of_sentences = len(book.tokenize('sent', rem_stopwords = False))
 	model = pickle.load(open('model_fit','rb'))
-	author_list = np.array(['Jane Austen', 'Lewis Carroll', 'Daniel Defoe', 'Charles Dickens', 'Sir Arthur Conan Doyle', 'Jack London', 'Joanne Rowling', 'Mary Shelley',
+	author_list = np.array(['Jane Austen', 'Lewis Carroll', 'Daniel Defoe', 'Charles Dickens', 'Sir Arthur Conan Doyle', 'Jack London', 'J.K. Rowling', 'Mary Shelley',
  'Louis Stevenson', 'Mark Twain', 'H.G. Wells', 'Oscar Wilde'])
 	proba = np.reshape(model.predict_proba(snip), (len(author_list)))
 	three_highest_proba_ind = (-proba).argsort()[:3]
@@ -66,6 +66,7 @@ if submit:
 		if (num_sent < 25):
 			stream.write("*There are too few sentences. The predictions might be grossly incorrect. Please add a few more sentences.*")
 
+		stream.write("__Here are the top 3 predictions:__")
 		stream.write(prob_author[0], "*with probability* ", round(confidence[0]*100,1), "%")
 		stream.write(prob_author[1], "*with probability* ", round(confidence[1]*100,1), "%")
 		stream.write(prob_author[2], "*with probability* ", round(confidence[2]*100,1), "%")
