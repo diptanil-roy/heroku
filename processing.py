@@ -63,7 +63,7 @@ submit = stream.button("Guess Author")
 if submit:
 	if (snippet!= ""):
 		prob_author, confidence, num_sent =  guess_author(snippet)
-		if (num_sent < 25):
+		if (num_sent < 40):
 			stream.write("*There are too few sentences. The predictions might be grossly incorrect. Please add a few more sentences.*")
 
 		stream.write("__Here are the top 3 predictions:__")
