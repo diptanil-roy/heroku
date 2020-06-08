@@ -32,8 +32,8 @@ def guess_author(snip: str):
 	if (snip!= ""): 
 		book = BookText(rawtext=snip)
 		number_of_sentences = len(book.tokenize('sent', rem_stopwords = False))
-	model = pickle.load(open('model_fit','rb'))
-	author_list = np.array(['Jane Austen', 'Lewis Carroll', 'Daniel Defoe', 'Charles Dickens', 'Sir Arthur Conan Doyle', 'Jack London', 'J.K. Rowling', 'Mary Shelley',
+	model = pickle.load(open('model1','rb'))
+	author_list = np.array(['Jane Austen', 'Daniel Defoe', 'Charles Dickens', 'Sir Arthur Conan Doyle', 'Jack London', 'J.K. Rowling', 'Mary Shelley',
  'Louis Stevenson', 'Mark Twain', 'H.G. Wells', 'Oscar Wilde'])
 	proba = np.reshape(model.predict_proba(snip), (len(author_list)))
 	three_highest_proba_ind = (-proba).argsort()[:3]
