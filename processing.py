@@ -52,7 +52,7 @@ For more info on this project, please visit our [github page](https://github.com
 
 stream.write("__Currently, we can only recognise the following authors:__ Jane Austen, Daniel Defoe, Charles Dickens, Sir Arthur Conan Doyle, Jack London, J.K. Rowling, Mary Shelley, Louis Stevenson, Mark Twain, H.G. Wells, and Oscar Wilde. ")
 
-stream.write("*To identify the author with a high probability, please enter at least one chapter from the text.*")
+stream.write("*To identify the author with a high probability, please enter at least a few paragraphs from the text.*")
 
 
 
@@ -63,7 +63,7 @@ submit = stream.button("Guess Author")
 if submit:
 	if (snippet!= ""):
 		prob_author, confidence, num_sent =  guess_author(snippet)
-		if (num_sent < 40):
+		if (num_sent < 15):
 			stream.write("*There are too few sentences. The predictions might be grossly incorrect. Please add a few more sentences.*")
 
 		stream.write("__Here are the top 3 predictions:__")
